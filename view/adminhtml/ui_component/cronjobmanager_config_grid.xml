@@ -145,6 +145,17 @@
 				</item>
 			</argument>
 		</column>
+        <column name="is_active">
+			<argument name="data" xsi:type="array">
+				<item name="config" xsi:type="array">
+					<item name="filter" xsi:type="string">select</item>
+					<item name="dataType" xsi:type="string">text</item>
+					<item name="label" xsi:type="string" translate="true">Status</item>
+					<item name="sortOrder" xsi:type="number">40</item>
+					<item name="sortable" xsi:type="boolean">true</item>
+				</item>
+			</argument>
+		</column>
 		<actionsColumn name="actions" class="EthanYehuda\CronjobManager\Ui\Component\Listing\Column\ConfigActions">
 			<argument name="data" xsi:type="array">
 				<item name="config" xsi:type="array">

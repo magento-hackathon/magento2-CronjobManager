@@ -157,8 +157,9 @@ class Grid extends AbstractDataProvider
     			$this->records['totalRecords']++;
     			$instance = $job['instance'];
     			$method = $job['method'];
-    			$frequency = $job['schedule'];
+                $frequency = $job['schedule'];
     			$jobData = [
+                    'is_active' => !empty($frequency) ? 'active' : 'inactive',
 					'job_code' => $code,
 					'group' => $group,
 					'frequency' => $frequency,

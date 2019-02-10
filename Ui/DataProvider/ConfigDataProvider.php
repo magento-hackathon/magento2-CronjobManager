@@ -61,6 +61,7 @@ class ConfigDataProvider extends AbstractDataProvider
         $jobData = $this->helper->getJobData($jobCode);
         
         $jobData = [
+            'is_active' => !empty($jobData['schedule']) ? 'active' : 'inactive',
             'job_code'  => $jobData['name'],
             'group'     => $jobData['group'],
             'frequency' => $jobData['schedule'],

@@ -21,12 +21,28 @@ class ConfigActions extends Column
                         )
                     );
                 }
-                $item[$name]["view"] = [
-                    "href" => $this->getContext()->getUrl(
-                        "cronjobmanager/config/edit", [
-                            'job_code' => $item[self::JOB_CODE]
-                        ]),
-                    "label"=>__("Edit")
+                $item[$name] = [
+                    'edit' => [
+                        "href" => $this->getContext()->getUrl(
+                            "cronjobmanager/config/edit", [
+                                'job_code' => $item[self::JOB_CODE]
+                            ]),
+                        "label"=>__("Edit")
+                    ],
+                    'enable' => [
+                        "href" => $this->getContext()->getUrl(
+                            "cronjobmanager/config/enable", [
+                                'job_code' => $item[self::JOB_CODE]
+                            ]),
+                        "label"=>__("Enable")
+                    ],
+                    'disable' => [
+                        "href" => $this->getContext()->getUrl(
+                            "cronjobmanager/config/disable", [
+                                'job_code' => $item[self::JOB_CODE]
+                            ]),
+                        "label"=>__("Disable")
+                    ],
                 ];
             }
         }
